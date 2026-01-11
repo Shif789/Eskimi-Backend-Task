@@ -72,7 +72,7 @@ Eskimi-Backend-Task/
 ## API Endpoints
 
 ### 1. Calculate Days Between Dates
-**Endpoint:** `POST /api/v1/days/calculate`
+**Endpoint:** `POST /api/v1/dates/difference`
 
 **Request:**
 ```json
@@ -85,7 +85,9 @@ Eskimi-Backend-Task/
 **Response:**
 ```json
 {
-  "numberOfDays": 365
+  "startDate": "2025-12-01",
+  "endDate": "2026-01-10",
+  "days": 40
 }
 ```
 
@@ -98,7 +100,7 @@ Eskimi-Backend-Task/
 ---
 
 ### 2. Convert Number to Words
-**Endpoint:** `POST /api/v1/convert`
+**Endpoint:** `POST /api/v1/number/number-to-words`
 
 **Request:**
 ```json
@@ -123,7 +125,7 @@ Eskimi-Backend-Task/
 ---
 
 ### 3. Temperature Statistics for Dhaka
-**Endpoint:** `POST /api/v1/temperature/stats`
+**Endpoint:** `POST /api/v1/weather/dhaka-stats`
 
 **Request:**
 ```json
@@ -396,9 +398,11 @@ cd Eskimi-Backend-Task
 docker-compose up -d
 # Wait 30 seconds
 curl http://localhost:8080/actuator/health
-curl -X POST http://localhost:8080/api/v1/convert \
+curl -X POST http://localhost:8080/api/v1/number/number-to-words \
   -H "Content-Type: application/json" \
-  -d '{"number":105}'
+  -d '{
+    "number": 36.40
+  }'
 ```
 ---
 

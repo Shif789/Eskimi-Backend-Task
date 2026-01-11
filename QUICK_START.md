@@ -47,23 +47,28 @@ Expected response:
 
 **Calculate Days:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/days/calculate \
-  -H "Content-Type: application/json" \
-  -d '{"startDate":"2024-01-01","endDate":"2024-12-31"}'
+ curl -X POST http://localhost:8080/api/v1/dates/difference \
+      -H "Content-Type: application/json" \
+      -d '{"startDate":"2024-01-01","endDate":"2024-12-31"}'
 ```
 
 **Convert Number:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/convert \
+curl -X POST http://localhost:8080/api/v1/number/number-to-words \
   -H "Content-Type: application/json" \
-  -d '{"number":36.40}'
+  -d '{
+    "number": 36.40
+  }'
 ```
 
 **Temperature Stats:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/temperature/stats \
+curl -X POST http://localhost:8080/api/v1/weather/dhaka-stats \
   -H "Content-Type: application/json" \
-  -d '{"startDate":"2025-01-01","endDate":"2025-01-07"}'
+  -d '{
+    "startDate": "2025-01-01",
+    "endDate": "2025-01-07"
+  }'
 ```
 
 ### Stop the Application

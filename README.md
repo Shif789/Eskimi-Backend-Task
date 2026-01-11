@@ -158,7 +158,7 @@ mvn -version     # Should show Maven 3.6+
 
 #### Step 2: Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Shif789/Eskimi-Backend-Task.git
 cd eskimi-backend-assignment
 ```
 
@@ -226,18 +226,17 @@ The project includes comprehensive unit tests for:
 
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/days/calculate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "startDate": "2024-01-01",
-    "endDate": "2024-12-31"
-  }'
+ curl -X POST http://localhost:8080/api/v1/dates/difference \
+      -H "Content-Type: application/json" \
+      -d '{"startDate":"2024-01-01","endDate":"2024-12-31"}'
 ```
 
 **Response:**
 ```json
 {
-  "numberOfDays": 365
+  "startDate": "2025-12-01",
+  "endDate": "2026-01-10",
+  "days": 40
 }
 ```
 
@@ -247,7 +246,7 @@ curl -X POST http://localhost:8080/api/v1/days/calculate \
 
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/convert \
+curl -X POST http://localhost:8080/api/v1/number/number-to-words \
   -H "Content-Type: application/json" \
   -d '{
     "number": 36.40
@@ -267,7 +266,7 @@ curl -X POST http://localhost:8080/api/v1/convert \
 
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/api/v1/temperature/stats \
+curl -X POST http://localhost:8080/api/v1/weather/dhaka-stats \
   -H "Content-Type: application/json" \
   -d '{
     "startDate": "2025-01-01",
