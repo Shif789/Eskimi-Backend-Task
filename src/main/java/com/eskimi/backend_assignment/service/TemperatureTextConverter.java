@@ -14,6 +14,11 @@ public class TemperatureTextConverter {
         this.numberToWordsService = numberToWordsService;
     }
 
+    /**
+     * converts temperature in numeric values to text
+     * @param temperature
+     * @return
+     */
     public String convertTemperatureToText(Double temperature) {
         if (temperature == null) {
             return "";
